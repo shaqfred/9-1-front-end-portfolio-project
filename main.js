@@ -8,41 +8,51 @@ fetch(URL_PAGE)
 
 
 
-const quotesList = document.querySelector("main.centered");
+const quoteList = document.querySelector("main.centered");
+
+let quotelist =document.querySelector('ul');
+quoteList.addEventListener(`click`,
+    function(ev) {
+        if (ev.target.quoteList === 'LI') {
+
+            ev.target.classList.toggle(`checked`);
+        }
+    })
+
 
 const updatePage =(quote) => {
 
     let article = document.createElement("article");
-article.classList.add("card");
+    article.classList.add("card");
 
-let category = document.createElement("h2");
-category.textContent = `${quote.category}`;
-article.append(category);
+    let category = document.createElement("h2");
+    category.textContent = `${quote.category}`;
+    article.append(category);
 
-let quoteText = document.createElement("p");
-quoteText.textContent = `${quote.quote}`
-article.append(quoteText);
+    let quoteText = document.createElement("p");
+    quoteText.textContent = `${quote.quoteText}`
+    article.append(quoteText);
 
-let showAnswerButton = document.createElement("button");
-article.append(showAnswerButton);
+    let showAnswerButton = document.createElement("button");
+    article.append(showAnswerButton);
 
-let answer = document.createElement("p");
-answer.classList.add("hidden");
-answer.textContent = `${quote.correct_answer}`;
-article.append(answer);
+    let answer = document.createElement("p");
+    answer.classList.add("hidden");
+    answer.textContent = `${quoteText}`;
+    article.append(answer);
 
-showAnswerButton.addEventListener("click", (event)=>{
-    event.target.classList.toggle("hidden");
-});
+    quoteText.addEventListener("click", (event)=>{
+        event.target.classList.toggle("hidden");
+    });
 
-    quotesList.append(article);
+    quoteList.append(article);
 
 };
 const showError = (error) =>{
     console.log(error);
     let err = document.createElement("p");
     err.textContent = `${error}`;
-    body.prepend(err);
+    document.body.prepend(err);
 };
 
 
@@ -51,12 +61,13 @@ const showError = (error) =>{
 form.addEventListener("submit",(event)=> {
     event.preventDefault();
 
-    // fetch(URL_PAGE)
-    // .then((result)=> result.json())
-    // .then((json)=> {
-    //   json.results.forEach((obj) => updatePage(obj));
-    // })
-    // // .catch(showError);
+    fetch(URL_PAGE)
+    .then((result)=> result.json())
+    .then((json)=> {
+        console.log(json)
+      json.data.forEach((obj) => updatePage(obj));
+    })
+    .catch(showError);
 
 });
 
