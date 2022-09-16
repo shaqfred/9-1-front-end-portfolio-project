@@ -7,7 +7,7 @@ fetch(URL_PAGE)
 .catch(err=>console.log(err))
 
 
-
+ 
 const quoteList = document.querySelector("main.centered");
 
 let quotelist =document.querySelector('ul');
@@ -34,12 +34,18 @@ const updatePage =(quote) => {
     article.append(quoteText);
 
     let showAnswerButton = document.createElement("button");
+    showAnswerButton.textContent = `${quoteText}`;
     article.append(showAnswerButton);
 
     let answer = document.createElement("p");
     answer.classList.add("hidden");
     answer.textContent = `${quoteText}`;
     article.append(answer);
+
+    
+    // let quoteAuthor =document.createElement("button");
+    // quoteAuthorButton.textContent = `${quoteText}`;
+    // article.append(quoteAuthor);
 
     quoteText.addEventListener("click", (event)=>{
         event.target.classList.toggle("hidden");

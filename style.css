@@ -2,9 +2,9 @@
 
 html,
 body {
-  color: #0f0e0e;
+  color: #ba2a2a;
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
+  margin: auto;
   padding: 0;
 }
 
@@ -16,7 +16,7 @@ h5,
 h6 {
   font-family: "Rubik", sans-serif;
   font-weight: normal;
-  margin: 0;
+  margin: auto;
 }
 
 header {
@@ -31,8 +31,9 @@ header h1 {
 
 header h1 span {
   font-family: "EB Garamond", serif;
-  font-size: 18px;
-  margin-left: 10px;
+  font-size: 25px;
+  scroll-margin-right: 15px;
+  
 }
 
 .centered {
@@ -57,12 +58,17 @@ button:hover {
   border: 2px solid #682a98;
   background: #625c94;
 }
-
+input.button:hover{
+  background-color: red;
+}
 .card {
   border: 3px solid #4f7d5d;
   padding: 25px;
 }
 
-.hidden {
-  display: none;
+.hidden{
+  text-decoration-color: grey;
+  visibility: hidden;
 }
+
+
