@@ -43,8 +43,8 @@ const updatePage =(quote) => {
     article.append(answer);
 
     
-    // let quoteAuthor =document.createElement("button");
-    // quoteAuthorButton.textContent = `${quoteText}`;
+    // let quoteAuthor =document.createElement("");
+    // quoteAuthor.textContent = `${quoteText}`;
     // article.append(quoteAuthor);
 
     quoteText.addEventListener("click", (event)=>{
