@@ -2,7 +2,7 @@
 
 html,
 body {
-  color: #ba2a2a;
+  background-color: palevioletred;
   font-family: Arial, Helvetica, sans-serif;
   margin: auto;
   padding: 0;
@@ -25,6 +25,7 @@ header {
   color: #a736d4;
   font-size: 100%;
   font-family:Arial, Helvetica, sans-serif
+ 
 }
 
 header h1 {
