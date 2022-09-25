@@ -21,6 +21,7 @@ quoteList.addEventListener(`click`,
 
 
 const updatePage =(quote) => {
+    
 
     let article = document.createElement("article");
     article.classList.add("card");
@@ -34,12 +35,12 @@ const updatePage =(quote) => {
     article.append(quoteText);
 
     let showAnswerButton = document.createElement("button");
-    showAnswerButton.textContent = `${quoteText}`;
+    showAnswerButton.textContent = `${quote.quoteAuthor}`;
     article.append(showAnswerButton);
 
     let answer = document.createElement("p");
     answer.classList.add("hidden");
-    answer.textContent = `${quoteText}`;
+    answer.textContent = `${quote.quoteAuthor}`;
     article.append(answer);
 
     
