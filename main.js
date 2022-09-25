@@ -26,9 +26,9 @@ const updatePage =(quote) => {
     let article = document.createElement("article");
     article.classList.add("card");
 
-    let category = document.createElement("h2");
-    category.textContent = `${quote.category}`;
-    article.append(category);
+    let quoteGenre = document.createElement("h2");
+    quoteGenre.textContent = `${quote.quoteGenre}`;
+    article.append(quoteGenre);
 
     let quoteText = document.createElement("p");
     quoteText.textContent = `${quote.quoteText}`
@@ -38,21 +38,19 @@ const updatePage =(quote) => {
     showAnswerButton.textContent = `${quote.quoteAuthor}`;
     article.append(showAnswerButton);
 
-    let answer = document.createElement("p");
-    answer.classList.add("hidden");
-    answer.textContent = `${quote.quoteAuthor}`;
-    article.append(answer);
-
+    let hiddenAnswer = document.createElement("p");
+    hiddenAnswer.classList.add("hidden");
+    hiddenAnswer.textContent = `${quote.quoteAuthor}`;
+    article.append(hiddenAnswer);
     
-    // let quoteAuthor =document.createElement("");
-    // quoteAuthor.textContent = `${quoteText}`;
-    // article.append(quoteAuthor);
+    quoteList.append(article);
+
 
     quoteText.addEventListener("click", (event)=>{
         event.target.classList.toggle("hidden");
     });
 
-    quoteList.append(article);
+
 
 };
 const showError = (error) =>{
