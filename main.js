@@ -35,19 +35,21 @@ const updatePage =(quote) => {
     article.append(quoteText);
 
     let showAnswerButton = document.createElement("button");
-    showAnswerButton.textContent = `${quote.quoteAuthor}`;
+    showAnswerButton.textContent = `reveal answer`;
     article.append(showAnswerButton);
 
-    let hiddenAnswer = document.createElement("p");
-    hiddenAnswer.classList.add("hidden");
-    hiddenAnswer.textContent = `${quote.quoteAuthor}`;
-    article.append(hiddenAnswer);
+
+    
     
     quoteList.append(article);
 
 
-    quoteText.addEventListener("click", (event)=>{
-        event.target.classList.toggle("hidden");
+    showAnswerButton.addEventListener("click", (event)=>{
+        let hiddenAnswer = document.createElement("p");
+    
+        hiddenAnswer.textContent = `${quote.quoteAuthor}`;
+        article.append(hiddenAnswer);
+        
     });
 
 
